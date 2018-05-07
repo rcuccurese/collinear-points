@@ -24,6 +24,10 @@ public class Plane {
         init();
     }
 
+    /**
+     * When adding a new point, the data structure recomputes all possible lines.
+     *
+     */
     public void addPoint(final Point point) {
         Assert.notNull(point, "Point cannot be null");
 
@@ -77,6 +81,11 @@ public class Plane {
         this.lines = new HashMap<>();
     }
 
+    /**
+     * When this method gets called, it checks if any existing Line can be extended,
+     * after that it draws any new line obtained with the new point.
+     *
+     */
     private void recomputeLines(final Point point) {
         Map<Integer, List<Line>> lines = new HashMap<>();
 
